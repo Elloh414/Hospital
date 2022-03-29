@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+
+    <style>
+        label{
+            display: inline-block;
+            width: 150px;
+        }
+
+    </style>
   @include('admin.css')
   </head>
   <body>
@@ -61,11 +70,21 @@
                 </select>
             </div>
 
+            <div style =" Padding: 15px">
+<label >Room Number</label>
+<input type="number" name="RoomNumber" style="color:black" placeholder="Room Number">
+            </div>
+
             <div style="padding: 15px">
 
                 <label> Image:</label>
-                <input type="text" name="name" style="color:black" placeholder="Input Doctor's Image">
+                <input type="file" name="image" style="color:black" placeholder="Input Doctor's Image">
             </div>
+
+
+            <div style="padding: 15px">
+
+            <input type="submit" class="btn btn-success"></div>
         </form>
     </div>
 </div>
