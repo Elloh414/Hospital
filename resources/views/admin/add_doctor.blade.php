@@ -42,7 +42,9 @@
 <div class="container-fluid page-body-wrapper">
     <div class="container" align="center" style="padding-top:100px">
 
-        <form action="">
+        <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
+
+            @csrf
 
             <div style="padding: 15px">
 
