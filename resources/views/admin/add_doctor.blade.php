@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-
-    <style>
-        label{
-            display: inline-block;
-            width: 150px;
-        }
-
-    </style>
-  @include('admin.css')
+ <style type="text/css">
+ label{
+  display: inline-block;
+  width:200px;
+}
+</style>
+  @include('admin.css');
   </head>
   <body>
     <div class="container-scroller">
@@ -40,7 +37,18 @@
 @include('admin.navbar')
         <!-- partial -->
 <div class="container-fluid page-body-wrapper">
+
     <div class="container" align="center" style="padding-top:100px">
+        @if(session()->has('message'))
+
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dimiss="alert">x</button>
+
+            {{session()->get('message')}}
+        </div>
+
+
+        @endif
 
         <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
 
@@ -49,44 +57,44 @@
             <div style="padding: 15px">
 
                 <label> Name:</label>
-                <input type="text" name="name" style="color:black" placeholder="Write Doctor's Name">
+                <input type="text" name="name" style="color:black" placeholder="Write Doctor's Name" required>
             </div>
 
             <div style="padding: 15px">
 
                 <label> Phone Number:</label>
-                <input type="number" name="number" style="color:black" placeholder="Mobile Number">
+                <input type="number" name="number" style="color:black" placeholder="Mobile Number" required>
             </div>
 
             <div style="padding: 15px">
 
                 <label> Speciality:</label>
-                <select name="" id="" style="color: black">
+                <select name="speciality" id="" style="color: black; width:200px">
                     <option value="">--Select--</option>
-                    <option value="">General</option>
-                    <option value="">Skin</option>
-                    <option value="">Eyes</option>
-                    <option value="">ENT</option>
-                    <option value="">Bones</option>
-                    <option value="">Teeth</option>
+                    <option value="general">General</option>
+                    <option value="skin">Skin</option>
+                    <option value="eyes">Eyes</option>
+                    <option value="ent">ENT</option>
+                    <option value="bones">Bones</option>
+                    <option value="teeth">Teeth</option>
                 </select>
             </div>
 
             <div style =" Padding: 15px">
 <label >Room Number</label>
-<input type="number" name="RoomNumber" style="color:black" placeholder="Room Number">
+<input type="text" name="room" style="color:black" placeholder="Room Number" required>
             </div>
 
             <div style="padding: 15px">
 
                 <label> Image:</label>
-                <input type="file" name="image" style="color:black" placeholder="Input Doctor's Image">
+                <input type="file" name="file" style="color:black; width:200px" placeholder="Input Doctor's Image" required>
             </div>
 
 
             <div style="padding: 15px">
 
-            <input type="submit" class="btn btn-success"></div>
+            <input type="submit" class="btn btn-success" required></div>
         </form>
     </div>
 </div>
@@ -97,6 +105,6 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    @include('admin.script')
+    @include('admin.script');
   </body>
 </html>

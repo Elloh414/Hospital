@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Doctor;
 use Illuminate\Http\Request;
+use App\Models\Doctor;
 
 
 class AdminController extends Controller
@@ -30,12 +30,12 @@ class AdminController extends Controller
 
         $doctor->room=$request->room;
 
-        $doctor->speciality=$request->room;
+        $doctor->speciality=$request->speciality;
 
 
         $doctor->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('message','Doctor Added Successfully');
 
 
     }
