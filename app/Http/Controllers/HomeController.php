@@ -34,9 +34,16 @@ class HomeController extends Controller
      //function that returns the home page template
      public function index(){
 
-        $doctor = Doctor::all();
+        if(Auth::id()){
+            return redirect('home');
+        }
+        else{
 
-        return view('user.home', compact('doctor'));
+
+            $doctor = Doctor::all();
+
+            return view('user.home', compact('doctor'));
+        }
      }
 }
 
