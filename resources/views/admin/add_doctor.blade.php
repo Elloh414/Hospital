@@ -57,13 +57,13 @@
             <div style="padding: 15px">
 
                 <label> Name:</label>
-                <input type="text" name="name" style="color:black" placeholder="Write Doctor's Name" required>
+                <input type="text" name="name" style="color:black" placeholder="Write Doctor's Name" required="">
             </div>
 
             <div style="padding: 15px">
 
                 <label> Phone Number:</label>
-                <input type="number" name="number" style="color:black" placeholder="Mobile Number" required>
+                <input type="number" name="number" style="color:black" placeholder="Mobile Number" required="">
             </div>
 
             <div style="padding: 15px">
@@ -82,19 +82,19 @@
 
             <div style =" Padding: 15px">
 <label >Room Number</label>
-<input type="text" name="room" style="color:black" placeholder="Room Number" required>
+<input type="text" name="room" style="color:black" placeholder="Room Number" required="">
             </div>
 
             <div style="padding: 15px">
 
                 <label> Image:</label>
-                <input type="file" name="file" style="color:black; width:200px" placeholder="Input Doctor's Image" required>
+                <input type="file" name="file" style="color:black; width:200px" placeholder="Input Doctor's Image" required="">
             </div>
 
 
             <div style="padding: 15px">
 
-            <input type="submit" class="btn btn-success" required></div>
+            <input type="submit" class="btn btn-success" required=""></div>
         </form>
     </div>
 </div>
