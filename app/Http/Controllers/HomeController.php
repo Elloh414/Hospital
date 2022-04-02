@@ -19,7 +19,9 @@ class HomeController extends Controller
           //tries to check if there is any user trying to log in
           //then we check the type of user they are
           if(Auth::user()->usertype == '0'){
-              return view('user.home');
+
+            $doctor = Doctor::all();
+              return view('user.home', compact('doctor'));
           }else{
               return view('admin.home');
           }
