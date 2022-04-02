@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
+
 
 class HomeController extends Controller
 {
@@ -29,6 +31,11 @@ class HomeController extends Controller
 
      //function that returns the home page template
      public function index(){
-        return view('user.home');
+
+        $doctor = Doctor::all();
+
+        return view('user.home', compact('doctor'));
      }
 }
+
+?>
